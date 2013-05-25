@@ -1,6 +1,6 @@
 {
   "name": "astral-pass",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Pass system for Astral",
   "main": "pass.js",
   "scripts": {
