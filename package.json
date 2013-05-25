@@ -1,0 +1,22 @@
+{
+  "name": "astral-pass",
+  "version": "0.0.0",
+  "description": "Pass system for Astral",
+  "main": "pass.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/btford/astral-pass.git"
+  },
+  "keywords": [
+    "astral"
+  ],
+  "author": "Brian Ford",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/btford/astral-pass/issues"
+  }
+}
