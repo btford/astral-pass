@@ -1,4 +1,8 @@
 
+// TODO: investigate using falafel:
+//       https://github.com/substack/node-falafel
+//       or Rocambole:
+//       https://github.com/millermedeiros/rocambole/
 var deepCompare = require('./lib/deep-compare');
 
 var Pass = function () {
