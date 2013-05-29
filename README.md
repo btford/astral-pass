@@ -1,36 +1,6 @@
 # Astral Pass
 
-Pass system for [Astral](https://github.com/btford/astral-pass).
-
-## Pass Types
-
-There are two kinds of passes: `info`, and `transform`.
-
-### Info
-Info passes operate on a copy of the AST,
-but are allowed to modify the `info` object passed into the function as a parameter.
-
-```javascript
-myPass.
-  info(function (chunk, info) {
-    info.foo = 'bar'; // persists
-
-    chunk.foo = 'bar'; // does not persist
-  });
-```
-
-### Transform
-Transforms, on the other hand, allow you to modify the structure of the part of the AST that the pass matches,
-but prevents you from making changes to the `info` parameter.
-
-```javascript
-myPass.
-  info(function (chunk, info) {
-    info.foo = 'bar'; // does not persist
-
-    chunk.foo = 'bar'; // persists
-  });
-```
+Pass helper for [Astral](https://github.com/btford/astral-pass) that simplifies traversal.
 
 ## Example
 
@@ -49,7 +19,7 @@ myPass.
   when(function (chunk, info) {
     // return true or false
   }).
-  transform(function (chunk, info) {
+  do(function (chunk, info) {
 
   });
 ```
@@ -57,7 +27,7 @@ myPass.
 ## More Complicated Passes
 
 You can introduce more complicated behavior by composing passes.
-This is done by modifying a pass's `prereques` property.
+This is done by modifying a pass's `prereqs` property.
 
 ```javascript
 var astralPass = require('astral-pass');
@@ -70,7 +40,7 @@ p1.prereqs = [ 'p2' ];
 
 p1.
   when( ... ).
-  transform( ... );
+  do( ... );
 
 // p2 gathers the info for p1
 
@@ -79,7 +49,7 @@ p2.name = 'myPass';
 
 p2.
   when( ... ).
-  info( ... );
+  do( ... );
 
 ```
 
